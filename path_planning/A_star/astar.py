@@ -114,7 +114,7 @@ def astar(maze, start, end):
             # Create the f, g, and h values
             # [f,g,h]
             children[i][1][0][1] = children[i][0][0][1] + 1
-            children[i][1][0][2] = ((children[i][1][1][0] - end[1][1][0]) ** 2) + ((children[i][1][1][1] - end[1][1][1]) ** 2)
+            children[i][1][0][2] = abs(children[i][1][1][0] - end[1][1][0]) + abs(children[i][1][1][1] - end[1][1][1])
             children[i][1][0][0] = children[i][1][0][1] + children[i][1][0][2]
             
             # Child is already in the open list

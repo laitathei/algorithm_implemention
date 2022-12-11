@@ -3,7 +3,7 @@
 This repo aims to implement and explain algorithm in self-study purpose
 
 * path planning
-    * A*
+    * [A*](/path_planning/A_star)
 
 * path tracking
     * pure pursuit

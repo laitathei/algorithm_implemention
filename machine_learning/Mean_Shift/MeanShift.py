@@ -65,20 +65,24 @@ class MeanShift():
                     need_shift[i] = False
                 mean_shift_points[i] = p_new
 
-        group = self.group_points(mean_shift_points)  # 计算所属的类别
+        group = self.group_points(mean_shift_points)
         all_data_point = np.array(all_data_point)
-        for i in range(point_number):
-            if group[i]==0:
-                plt.plot(all_data_point[i, 0], all_data_point[i, 1],'ro')
-            elif group[i]==1:
-                plt.plot(all_data_point[i, 0], all_data_point[i, 1],'go')
-            elif group[i]==2:
-                plt.plot(all_data_point[i, 0], all_data_point[i, 1],'bo')
-                
+
+        colors = 10 * ['r', 'g', 'b', 'k', 'y']
+
         mean_shift_points = np.around(mean_shift_points, 2)
         mean_shift_points = np.unique(mean_shift_points, axis=0)
-        for i in range(mean_shift_points.shape[0]):
-            plt.scatter(mean_shift_points[i][0], mean_shift_points[i][1], color='k', marker='*', s=150)
+        theta = np.linspace(0, 2 * np.pi, 800)
+        
+        for i in range(point_number):
+            plt.scatter(all_data_point[i, 0], all_data_point[i, 1],color=colors[group[i]])
 
+        for i in range(mean_shift_points.shape[0]):
+            plt.scatter(mean_shift_points[i][0], mean_shift_points[i][1], color=colors[i], marker='x', s=30)
+            x, y = np.cos(theta) * self.kernel_bandwidth + mean_shift_points[i][0], np.sin(theta) * self.kernel_bandwidth + mean_shift_points[i][1]
+            plt.plot(x, y, linewidth=1, color=colors[i])
         plt.show() 
+
         return mean_shift_points
+
+

@@ -15,7 +15,6 @@ def Flat_Kernel(distance, bandwidth, point_number):
             inRange.append(distance[i])
             weight[i] = 1
     inRange = np.array(inRange)
-    print(inRange)
     return weight
 
 def Gaussian_Kernel(distance, bandwidth, point_number):
@@ -31,7 +30,6 @@ def Get_Mono_Histogram(image_dir):
     hist = cv2.calcHist([img],[0],None,[256],[0,256])
     plt.hist(img.ravel(), 256, [0, 256])
     plt.show()
-    print(hist)
 
 def Get_RGB_Histogram(image_dir):
     img = cv2.imread(image_dir)

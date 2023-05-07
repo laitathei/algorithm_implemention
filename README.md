@@ -11,3 +11,7 @@ This repo aims to implement and explain algorithm in self-study purpose
 
 * Machine Learning
     * [Mean Shift](/machine_learning/Mean_Shift)
+
+
+* Localization
+    * [Kalman Filter](/localization/Kalman_Filter)

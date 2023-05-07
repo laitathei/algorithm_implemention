@@ -10,4 +10,4 @@ This repo aims to implement and explain algorithm in self-study purpose
     * pure pursuit (future plan)
 
 * Machine Learning
-    * [Mean Shift](/machine learning/Mean_Shift)
+    * [Mean Shift](/machine_learning/Mean_Shift)

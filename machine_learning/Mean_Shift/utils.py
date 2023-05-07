@@ -19,7 +19,7 @@ def Flat_Kernel(distance, bandwidth, point_number):
 
 def Gaussian_Kernel(distance, bandwidth, point_number):
     left = 1.0/(bandwidth * math.sqrt(2*math.pi))
-    right = np.zeros((point_number, 1))  # mX1的矩阵
+    right = np.zeros((point_number, 1))
     for i in range(point_number):
         right[i, 0] = (-0.5 * distance[i] * distance[i]) / (bandwidth * bandwidth)
         right[i, 0] = np.exp(right[i, 0])
